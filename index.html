@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>資料結構與演算法互動學習</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="回到首頁">
+        <span class="brand-mark">DS</span>
+        <span>
+          <strong>資料結構與演算法</strong>
+          <small>Interactive Lab</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="主要導覽">
+        <a href="#structures">資料結構</a>
+        <a href="#algorithms">演算法</a>
+        <a href="#playground">互動展示</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">用互動畫面理解資料結構與演算法</h1>
+          <p>
+            先建立網站骨幹：分類導覽、學習卡片、互動展示區與 AVL 樹 Three.js
+            模組入口。後續可逐步加入樹、圖、排序、搜尋與動態規劃視覺化。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#playground">開始互動</a>
+            <a class="button secondary" href="#structures">瀏覽主題</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="網站模組狀態">
+          <div class="status-row">
+            <span>AVL Tree</span>
+            <strong>Three.js ready</strong>
+          </div>
+          <div class="status-row">
+            <span>Sorting</span>
+            <strong>Next</strong>
+          </div>
+          <div class="status-row">
+            <span>Graph</span>
+            <strong>Planned</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="structures" class="section" aria-labelledby="structures-title">
+        <div class="section-heading">
+          <h2 id="structures-title">資料結構</h2>
+          <p>用一致的模組格式整理概念、操作、時間複雜度與互動視覺化。</p>
+        </div>
+
+        <div class="topic-grid">
+          <article class="topic-card active">
+            <h3>AVL 樹</h3>
+            <p>平衡二元搜尋樹，支援插入、刪除與旋轉示意。</p>
+            <a href="#playground">開啟模組</a>
+          </article>
+          <article class="topic-card">
+            <h3>堆疊與佇列</h3>
+            <p>展示 push、pop、enqueue、dequeue 的狀態變化。</p>
+            <span>待新增</span>
+          </article>
+          <article class="topic-card">
+            <h3>圖 Graph</h3>
+            <p>預留 BFS、DFS、最短路徑與節點拖曳視覺化。</p>
+            <span>待新增</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="algorithms" class="section" aria-labelledby="algorithms-title">
+        <div class="section-heading">
+          <h2 id="algorithms-title">演算法</h2>
+          <p>排序、搜尋、遞迴與動態規劃會共用相同的步驟控制器。</p>
+        </div>
+
+        <div class="topic-grid compact">
+          <article class="topic-card">
+            <h3>排序</h3>
+            <p>Bubble、Merge、Quick Sort。</p>
+          </article>
+          <article class="topic-card">
+            <h3>搜尋</h3>
+            <p>Binary Search、BFS、DFS。</p>
+          </article>
+          <article class="topic-card">
+            <h3>動態規劃</h3>
+            <p>狀態表、轉移式與回溯路徑。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="playground" class="section playground" aria-labelledby="playground-title">
+        <div class="section-heading">
+          <h2 id="playground-title">互動展示：AVL 樹</h2>
+          <p>目前先放入 Three.js 場景骨架，後續可接 AVL 插入、刪除與旋轉動畫。</p>
+        </div>
+
+        <div class="lab-layout">
+          <aside class="control-panel" aria-label="AVL 樹控制面板">
+            <label for="node-value">節點值</label>
+            <div class="input-row">
+              <input id="node-value" type="number" value="42" min="0" max="999">
+              <button id="insert-node" type="button">插入</button>
+            </div>
+
+            <div class="control-group">
+              <button id="reset-scene" type="button">重置場景</button>
+              <button id="next-step" type="button">下一步</button>
+            </div>
+
+            <dl class="metrics">
+              <div>
+                <dt>高度</dt>
+                <dd id="tree-height">0</dd>
+              </div>
+              <div>
+                <dt>平衡因子</dt>
+                <dd id="balance-factor">0</dd>
+              </div>
+              <div>
+                <dt>狀態</dt>
+                <dd id="tree-status">骨幹完成</dd>
+              </div>
+            </dl>
+          </aside>
+
+          <div class="visual-panel">
+            <canvas id="avl-canvas" aria-label="AVL 樹 3D 視覺化畫布"></canvas>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>HTML5 + Three.js skeleton</span>
+      <span>Data Structures & Algorithms</span>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
